@@ -1,0 +1,61 @@
+backend/venv/
+pycache/
+*.py[cod]
+*.so
+*.egg-info/
+*.sqlite3
+.log
+.env
+.env.
+
+frontend/node_modules/
+frontend/.expo/
+frontend/.expo-shared/
+frontend/.parcel-cache/
+frontend/.gradle/
+frontend/android/.gradle/
+frontend/android/app/build/
+frontend/ios/build/
+frontend/ios/Pods/
+frontend/.cache/
+
+frontend/expo-debug.log
+
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+app-example

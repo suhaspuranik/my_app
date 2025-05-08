@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-multipart
+torch==2.0.1
+librosa
+numpy
+scikit-learn
+matplotlib
