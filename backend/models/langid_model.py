@@ -42,10 +42,13 @@ def extract_features(file_path, max_len=100):
     return mfcc
 
 # --- Inference Function ---
-def detect_language(audio_path: str) -> str:
+# --- Inference Function ---
+def detect_language(audio_path: str) -> tuple[str, float]:
     features = extract_features(audio_path)
     input_tensor = torch.FloatTensor(features).unsqueeze(0).to(device)  # shape: (1, 100, 40)
     with torch.no_grad():
         output = model(input_tensor)
-        predicted_idx = output.argmax(1).item()
-    return LANGUAGES[predicted_idx]
+        probabilities = torch.softmax(output, dim=1)
+        confidence, predicted_idx = torch.max(probabilities, 1)
+        confidence = confidence.item()  # convert to Python float
+    return LANGUAGES[predicted_idx.item()], confidence
